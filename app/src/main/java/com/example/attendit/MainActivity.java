@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<ClassItem> classItems = new ArrayList<>();
     Toolbar toolbar;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

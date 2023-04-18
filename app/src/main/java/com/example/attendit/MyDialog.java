@@ -2,6 +2,8 @@ package com.example.attendit;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +35,8 @@ public class MyDialog extends DialogFragment {
         if (getTag().equals(CLASS_ADD_DIALOG))dialog=getAddClassDialog();
         if (getTag().equals(STUDENT_ADD_DIALOG))dialog=getAddStudentDialog();
 
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+
         return dialog;
 
     }
@@ -61,6 +65,7 @@ public class MyDialog extends DialogFragment {
             String roll = roll_edt.getText().toString();
             String name = name_edt.getText().toString();
             roll_edt.setText(String.valueOf(Integer.parseInt(roll)+1));
+            name_edt.setText("");
             listener.onClick(roll,name);
         });
         return builder.create();
